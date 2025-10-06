@@ -33,7 +33,8 @@ This is a web test automation framework, This automation script follows
 - TC19- verify user can click on proceed to checkout to checkout the product | priority - High
 - TC20- verify on the checkout page, total price is same as cart page | priority - High
 
-
+> ⚠️ **Warning:**  
+> Test cases `extra`, `TC16`, `TC18`, and `TC20` are expected to fail due to known bugs.
 
 ## Folder Structure
 
@@ -131,4 +132,3 @@ npx playwright show-report
 
 ---
 
-You're now ready to use and extend this Playwright automation framework!
