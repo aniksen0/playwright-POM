@@ -1,3 +1,6 @@
+# View this test strategy file from here
+```URL: https://docs.google.com/document/d/1g14bHdiubE7cve0KSYDucGffh4j4e2kHPL0jnS5PRvE/edit?usp=sharing```
+
 # Playwright automation with CI/CD.
 This is a web test automation framework, This automation script follows
 - Page Object Model
@@ -30,7 +33,6 @@ This is a web test automation framework, This automation script follows
 - TC19- verify user can click on proceed to checkout to checkout the product | priority - High
 - TC20- verify on the checkout page, total price is same as cart page | priority - High
 
--- end of test cases --
 
 
 ## Folder Structure
@@ -38,24 +40,19 @@ This is a web test automation framework, This automation script follows
 ```plaintext
 playwright-POM/
 ├── tests/
-│   ├── dashboard.spec.ts
+│   ├── regression.spec.js
 ├── pages/
 │   ├── DashboardPage.ts
-│   ├── ProductPage.ts
-│   └── CartPage.ts
-├── utils/
-│   ├── helpers.ts
-│   └── reporter.ts
-├── fixtures/
-│   └── testData.json
+│   ├── base.page.js
+├── testData
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
-├── playwright.config.ts
+│       └── playwright.yml
+├── playwright.config.js
 ├── package.json
+|-- package-lock.json
 └── readMe.md
 ```
-
 **Description:**
 - `tests/`: Contains all test case files.
 - `pages/`: Page Object Model classes for each page.
@@ -65,3 +62,73 @@ playwright-POM/
 - `playwright.config.ts`: Playwright configuration.
 - `package.json`: Project dependencies and scripts.
 - `readMe.md`: Project documentation.
+
+---
+
+## Installation & Setup Guide
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm (comes with Node.js)
+
+### 1. Clone the Repository
+```sh
+git clone <your-repo-url>
+cd playwright-POM
+```
+
+### 2. Install Dependencies
+```sh
+npm install
+```
+
+### 3. Project Structure Overview
+- All test cases are in the `tests/` folder.
+- Page Object Models are in the `page/` or `pages/` folder.
+- Test data is in `testData/`.
+- Configuration is in `playwright.config.ts`.
+
+### 4. Running Tests
+To run all Playwright tests:
+```sh
+npm test
+```
+Or directly:
+```sh
+npx playwright test
+```
+
+#### Run Specific Test File
+```sh
+npx playwright test tests/regression.spec.ts
+```
+
+#### Run Tests in Headed Mode (see browser UI)
+```sh
+npx playwright test --headed
+```
+
+#### Generate HTML Report
+After running tests, open the report:
+```sh
+npx playwright show-report
+```
+
+### 5. Using Scripts
+- `npm test`: Runs all Playwright tests as defined in `package.json`.
+- You can add more scripts in `package.json` as needed (e.g., for linting, cleaning reports, etc.).
+
+### 6. CI/CD Integration
+- The workflow file `.github/workflows/playwright.yml` automates test execution in CI/CD pipelines (such as GitHub Actions).
+- On every push or pull request, tests run automatically to ensure code quality and catch regressions early.
+- Test results are collected and an HTML report is generated for each run, making it easy to review outcomes directly from the pipeline.
+- The workflow can be customized to include steps for installing dependencies, running lint checks, and publishing reports or artifacts.
+- This setup helps maintain a reliable, consistent testing process and supports rapid development cycles.
+
+### 7. Troubleshooting
+- If you encounter issues, ensure all dependencies are installed and Node.js is up to date.
+- For Playwright-specific errors, refer to the [Playwright documentation](https://playwright.dev/docs/intro).
+
+---
+
+You're now ready to use and extend this Playwright automation framework!

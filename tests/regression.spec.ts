@@ -143,3 +143,5 @@ test('TC20- verify on the checkout page, total price is same as cart page', asyn
   await dashboard.proceedToCheckout();
   await dashboard.verifyTotalPriceOnCheckoutPage();
 });
+
+//Checkout was not covered as it requires live payment details and OTP
