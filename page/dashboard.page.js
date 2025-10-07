@@ -20,7 +20,6 @@ class DashboardPage extends BasePage {
     const headerText = text ? text.toLowerCase() : "";
     expect(headerText).toContain("acme");
     await this.logStep(`✅ Dashboard header verified: ${headerText}`);
-
     const pageTitle = await this.page.title();
     expect(pageTitle).toContain("Acme");
     await this.logStep(`✅ Page title verified: ${pageTitle}`);
